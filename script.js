@@ -28,7 +28,7 @@
     tryNext();
   }
 
-  attachVideo(["video/background.mp4", "video/background.webm"]);
+  attachVideo(["video/background.mp4?v=2", "video/background.webm?v=2"]);
 
   function say(text, isError) {
     message.textContent = text;
