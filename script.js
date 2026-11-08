@@ -60,7 +60,7 @@
     const payload = {
       name: form.name.value.trim(),
       email: form.email.value.trim(),
-      role: form.role.value,
+      act: form.act.value.trim(),
       note: form.note.value.trim(),
       _replyto: form.email.value.trim(),
       _subject: "Memento's Got Talent signup — " + form.name.value.trim(),
