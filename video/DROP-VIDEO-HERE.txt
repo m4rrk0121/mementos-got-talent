@@ -1,0 +1,8 @@
+Drop the background video in this folder and name it exactly:
+
+  background.mp4
+
+background.webm also works. The page plays it muted, full-screen, and looping.
+Refresh after you add the file.
+
+GitHub will reject a file over 100MB. Compress it first if it's large.
