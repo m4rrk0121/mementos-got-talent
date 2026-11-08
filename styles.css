@@ -6,7 +6,10 @@
   --cream: #f6efe4;
   --muted: rgba(246, 239, 228, 0.72);
   --line: rgba(26, 17, 14, 0.14);
-  --danger: #8d2430;
+  --danger: #ff6b7a;
+  --navy: #101922;
+  --navy-2: #182431;
+  --mint: #0df0a8;
   color-scheme: dark;
 }
 
@@ -54,14 +57,14 @@ body {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(92, 18, 28, 0.72), transparent 22%, transparent 78%, rgba(92, 18, 28, 0.72));
+    linear-gradient(90deg, rgba(16, 25, 34, 0.8), transparent 22%, transparent 78%, rgba(16, 25, 34, 0.8));
 }
 
 .stage-wash {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(18, 12, 10, 0.25) 0%, rgba(18, 12, 10, 0.45) 45%, rgba(18, 12, 10, 0.82) 100%);
+    linear-gradient(180deg, rgba(16, 25, 34, 0.3) 0%, rgba(16, 25, 34, 0.5) 45%, rgba(16, 25, 34, 0.85) 100%);
 }
 
 .has-video .stage-light,
@@ -111,21 +114,21 @@ header {
   font-weight: 520;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--mint);
 }
 
 .dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--gold);
-  box-shadow: 0 0 0 0 rgba(228, 177, 90, 0.7);
+  background: var(--mint);
+  box-shadow: 0 0 0 0 rgba(13, 240, 168, 0.7);
   animation: pulse 2.4s ease-out infinite;
 }
 
 @keyframes pulse {
-  70% { box-shadow: 0 0 0 8px rgba(228, 177, 90, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(228, 177, 90, 0); }
+  70% { box-shadow: 0 0 0 8px rgba(13, 240, 168, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(13, 240, 168, 0); }
 }
 
 .hero { padding-bottom: 12px; }
@@ -152,15 +155,17 @@ h1 {
   margin: 28px 0 0;
   font-size: 0.92rem;
   letter-spacing: 0.04em;
-  color: var(--gold);
+  color: var(--mint);
 }
 
 .card {
-  background: var(--paper);
-  color: var(--ink);
-  border-radius: 22px;
+  background: rgba(16, 25, 34, 0.94);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 3px solid var(--mint);
+  border-radius: 4px;
   padding: 26px 24px 22px;
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.38);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
 }
 
 .card h2 {
@@ -173,62 +178,68 @@ h1 {
 
 .card-note {
   margin: 8px 0 18px;
-  color: rgba(26, 17, 14, 0.68);
+  color: rgba(255, 255, 255, 0.68);
   line-height: 1.4;
 }
 
 label {
   display: block;
   margin: 14px 0 6px;
-  font-size: 0.82rem;
+  font-size: 0.74rem;
   font-weight: 640;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
+  color: var(--mint);
 }
 
 label span {
   font-weight: 520;
-}
-
-label span {
   text-transform: none;
   letter-spacing: 0;
-  color: rgba(26, 17, 14, 0.5);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 input, textarea {
   width: 100%;
-  border: 1px solid var(--line);
-  background: var(--paper-2);
-  color: var(--ink);
-  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: var(--navy-2);
+  color: #fff;
+  border-radius: 2px;
   padding: 13px 14px;
   font: inherit;
   font-size: 1rem;
 }
 
+input::placeholder, textarea::placeholder { color: rgba(255, 255, 255, 0.4); }
+
 textarea { resize: vertical; }
 
 input:focus, textarea:focus {
-  outline: 2px solid #1a110e;
-  outline-offset: 1px;
+  outline: none;
+  border-color: var(--mint);
+  box-shadow: 0 0 0 1px var(--mint);
 }
 
 button[type="submit"] {
   width: 100%;
-  margin-top: 18px;
-  border: 0;
-  border-radius: 999px;
-  padding: 14px 18px;
-  background: var(--ink);
-  color: var(--paper);
+  margin-top: 20px;
+  border: 1px solid #fff;
+  border-radius: 0;
+  padding: 15px 18px;
+  background: #fff;
+  color: var(--navy);
   font: inherit;
   font-weight: 640;
-  font-size: 1rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
   cursor: pointer;
 }
 
-button[type="submit"]:hover { background: #2a1b16; }
+button[type="submit"]:hover {
+  background: var(--mint);
+  border-color: var(--mint);
+}
 
 button[type="submit"]:disabled {
   opacity: 0.6;
