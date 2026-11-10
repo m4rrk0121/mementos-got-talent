@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Memento's Got Talent</title>
-  <meta name="description" content="Sign up for Memento's Got Talent. Performers wanted — leave your name and act, and you'll hear when it's time.">
+  <meta name="description" content="Sign up for Memento's Got Talent. Performers wanted for Memento's Got Talent on Friday 11 December. Signups close at close of play on Monday 30 November.">
   <meta name="theme-color" content="#101922">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23120c0a'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23e4b15a'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,520;9..144,640&family=Outfit:wght@380;520;640&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=4">
+  <link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
   <div class="stage" aria-hidden="true">
@@ -23,18 +23,38 @@
   <div class="wrap">
     <header>
       <p class="mark">Memento's Got Talent</p>
-      <p class="status"><span class="dot"></span> Signups open</p>
+      <p class="status"><span class="dot"></span> <span id="status-text">Signups open until 30 Nov</span></p>
     </header>
 
     <section class="hero">
-      <h1>Put your<br>name down.</h1>
-      <p class="lede">Performers wanted. Leave an email and you’ll hear when the night is on.</p>
-      <p class="acts">Singers · Comics · Dancers · Magicians · The unexpected</p>
+      <figure class="thermo" id="thermo" hidden>
+        <div class="thermo-graphic" id="thermo-graphic"></div>
+        <figcaption>
+          <strong id="thermo-count">0</strong>
+          <span id="thermo-label">of 20 acts signed up</span>
+        </figcaption>
+      </figure>
+
+      <div class="hero-text">
+        <dl class="dates">
+          <div>
+            <dt>The show</dt>
+            <dd>Friday 11 December</dd>
+          </div>
+          <div>
+            <dt>Signups close</dt>
+            <dd>Close of play, Mon 30 November</dd>
+          </div>
+        </dl>
+        <h1>Put your<br>name down.</h1>
+        <p class="lede">Performers wanted for Memento’s Got Talent on Friday 11 December. Get your act in by close of play on Monday 30 November.</p>
+        <p class="acts">Singers · Comics · Dancers · Magicians · The unexpected</p>
+      </div>
     </section>
 
     <section class="card" aria-labelledby="signup-title">
       <h2 id="signup-title">Save your spot</h2>
-      <p class="card-note">Takes half a minute. We’ll only use this to reach you about the show.</p>
+      <p class="card-note">Takes half a minute. Signups close at close of play on Monday 30 November. We’ll only use your email to reach you about the show.</p>
 
       <form id="signup" novalidate>
         <label class="hp" for="company">Company</label>
@@ -58,7 +78,7 @@
     </section>
   </div>
 
-  <script src="config.js?v=2"></script>
-  <script src="script.js?v=3"></script>
+  <script src="config.js?v=3"></script>
+  <script src="script.js?v=4"></script>
 </body>
 </html>

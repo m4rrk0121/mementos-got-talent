@@ -131,14 +131,128 @@ header {
   100% { box-shadow: 0 0 0 0 rgba(13, 240, 168, 0); }
 }
 
-.hero { padding-bottom: 12px; }
+.hero {
+  padding-bottom: 12px;
+  display: flex;
+  align-items: flex-end;
+  gap: 30px;
+}
+
+.hero-text { min-width: 0; }
+
+.dates {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 26px;
+}
+
+.dates div {
+  padding: 10px 14px;
+  background: rgba(16, 25, 34, 0.78);
+  border-left: 3px solid var(--mint);
+}
+
+.dates dt {
+  font-size: 0.68rem;
+  font-weight: 640;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mint);
+}
+
+.dates dd {
+  margin: 3px 0 0;
+  font-weight: 640;
+  font-size: 1.02rem;
+  color: #fff;
+}
+
+.thermo {
+  flex: 0 0 auto;
+  width: 128px;
+  margin: 0;
+  text-align: center;
+}
+
+.thermo[hidden] { display: none; }
+
+.thermo-graphic svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.thermo .tube {
+  fill: rgba(16, 25, 34, 0.82);
+  stroke: rgba(255, 255, 255, 0.55);
+  stroke-width: 2;
+}
+
+.thermo .fill {
+  transform: translateY(250px);
+  transition: transform 1.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.thermo .bulb {
+  fill: var(--mint);
+  stroke: #fff;
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 14px rgba(13, 240, 168, 0.55));
+}
+
+.thermo .bulb-shine { fill: rgba(255, 255, 255, 0.85); }
+
+.thermo .mark polygon {
+  fill: rgba(16, 25, 34, 0.7);
+  stroke: rgba(255, 255, 255, 0.55);
+  stroke-width: 1.2;
+  stroke-linejoin: round;
+  transition: fill 0.4s, stroke 0.4s;
+}
+
+.thermo .mark.is-lit polygon {
+  fill: var(--mint);
+  stroke: var(--mint);
+  filter: drop-shadow(0 0 5px rgba(13, 240, 168, 0.8));
+}
+
+.thermo .mark text {
+  fill: rgba(255, 255, 255, 0.7);
+  font-size: 11px;
+  font-weight: 640;
+}
+
+.thermo figcaption {
+  margin-top: 10px;
+  line-height: 1.15;
+}
+
+.thermo figcaption strong {
+  display: block;
+  font-family: Fraunces, serif;
+  font-size: 2.4rem;
+  font-weight: 640;
+  color: #fff;
+}
+
+.thermo figcaption span {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 640;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mint);
+}
 
 h1 {
   margin: 0;
   max-width: 100%;
   font-family: Fraunces, serif;
   font-weight: 640;
-  font-size: clamp(3.4rem, 7.4vw, 6.6rem);
+  font-size: clamp(3.2rem, 5.6vw, 5.4rem);
   letter-spacing: -0.045em;
   line-height: 0.88;
 }
@@ -302,6 +416,14 @@ button[type="submit"]:disabled {
 
   h1 { font-size: 2.45rem; }
 
+  .hero { gap: 14px; }
+  .thermo { width: 74px; }
+  .thermo figcaption strong { font-size: 1.8rem; }
+  .thermo figcaption span { font-size: 0.6rem; letter-spacing: 0.06em; }
+  .dates { gap: 6px; margin-bottom: 14px; }
+  .dates div { padding: 7px 10px; }
+  .dates dd { font-size: 0.88rem; }
+
   .lede { margin-top: 12px; font-size: 1.02rem; }
   .acts { margin-top: 12px; }
   .card { padding: 18px 16px 14px; }
@@ -312,5 +434,6 @@ button[type="submit"]:disabled {
 
 @media (prefers-reduced-motion: reduce) {
   .stage-light, .dot { animation: none; }
+  .thermo .fill { transition: none; }
   #bg-video { display: none; }
 }
