@@ -106,7 +106,16 @@
     thermoLabel.textContent = count >= goal
       ? (count === 1 ? "act" : "acts") + " signed up. Goal smashed!"
       : "of " + goal + " acts signed up";
-    thermo.hidden = false;
+    try { localStorage.setItem("signupCount", String(count)); } catch (e) {}
+  }
+
+  function lastKnownCount() {
+    try {
+      const saved = Number(localStorage.getItem("signupCount"));
+      return Number.isFinite(saved) && saved > 0 ? saved : 0;
+    } catch (e) {
+      return 0;
+    }
   }
 
   async function counter(action) {
@@ -117,14 +126,11 @@
   }
 
   buildThermometer();
-  counter("get")
-    .then(function (value) {
-      showCount(0);
-      requestAnimationFrame(function () {
-        requestAnimationFrame(function () { showCount(value); });
-      });
-    })
-    .catch(function () {});
+  showCount(0);
+  requestAnimationFrame(function () {
+    requestAnimationFrame(function () { showCount(lastKnownCount()); });
+  });
+  counter("get").then(showCount).catch(function () {});
 
   const closesAt = Date.parse(config.signupsCloseAt || "");
   if (closesAt && Date.now() > closesAt) {
